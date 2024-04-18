@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: white;
+  z-index: 2;
+}
+
+/* &__auth-btn */
+.header .header__auth-btn {
+  border-radius: 12px;
+  font-size: 18px;
+  background-color: #0047ff;
+  cursor: pointer;
+  padding: 10px 25px;
+  color: white;
+}
+
+.header .header__auth-btn:hover {
+  background-color: #0036be;
+}
+
+.header .header__auth-btn:active {
+  transform: scale(0.98);
+}
+
+/* &__logo */
+.header .header__logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0047ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .header__logo:active {
+  transform: scale(0.98);
+}
+
+.header .header__logo svg {
+  width: 42px;
+  height: 42px;
+}
+
+.header .header__logo span {
+  font-size: 12px;
+  position: relative;
+  top: 3px;
+  right: 6px;
+}
+
+/* &__nav */
+.header .header__nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* &__user-info */
+.header .header__user-info {
+  font-size: 18px;
+  color: #0047ff;
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-weight: 500;
+  border: 1px dashed #0047ff;
+}
+
+.header .header__user-info p {
+  color: black;
+}
+
+/* &__link */
+.header .header__link {
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.header .header__link:hover {
+  color: #0047ff;
+  text-decoration: underline;
+}
+
+.header .header__link:active {
+  transform: scale(0.98);
+}
+
+/* &__box */
+.header .header__box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

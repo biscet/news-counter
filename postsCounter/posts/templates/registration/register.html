@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'styles/register.css' %}?v=1.0.0" />
+{% endblock head %}
+
+{% block content %}
+<div class="register">
+    <div class="register__box">
+        <h1>Регистрация</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_username">Логин</label>
+            <input type="text" id="id_username" name="username" required>
+
+            <label for="id_first_name">Имя</label>
+            <input type="text" id="id_first_name" name="first_name" required>
+
+            <label for="id_last_name">Фамилия</label>
+            <input type="text" id="id_last_name" name="last_name" required>
+
+            <label for="id_password1">Пароль</label>
+            <input type="password" id="id_password1" name="password1" required>
+
+            <p>Ваш пароль не должен быть слишком похож на другую вашу личную информацию.</p>
+            <p>Ваш пароль должен содержать не менее 8 символов.</p>
+            <p>Ваш пароль не может быть широко используемым паролем.</p>
+            <p>Ваш пароль не может быть полностью числовым.</p>
+
+            <br>
+            <br>
+
+            <label for="id_password2">Повторите пароль</label>
+            <input type="password" id="id_password2" name="password2" required>
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

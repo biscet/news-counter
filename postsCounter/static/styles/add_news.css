@@ -1,0 +1,61 @@
+.add-news {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 20px 50px;
+  gap: 35px;
+}
+
+.add-news h1 {
+  font-size: 42px;
+}
+
+.add-news form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-news form label {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.add-news form textarea {
+  font-size: 18px;
+  outline: none;
+  border: 1px solid black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  max-width: 400px;
+  min-height: 100px;
+}
+
+.add-news form button {
+  border-radius: 12px;
+  font-size: 18px;
+  background-color: #0047ff;
+  cursor: pointer;
+  width: min-content;
+  padding: 10px 25px;
+  margin-top: 10px;
+  color: white;
+}
+
+.add-news form button:hover {
+  background-color: #0036be;
+}
+
+.add-news form button:active {
+  transform: scale(0.98);
+}
+
+.add-news form ul {
+  list-style-type: none;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.add-news form li {
+  color: red;
+}

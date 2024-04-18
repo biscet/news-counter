@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'styles/posts.css' %}?v=1.0.5" />
+  <link rel="stylesheet" href="{% static 'styles/pagination.css' %}?v=1.0.0" />
+{% endblock head %}
+
+{% block content %}
+  <div class="posts">
+    <div class="posts-all">
+      <h1>Заголовки новостей</h1>
+      <div class="posts-all__list">
+        {% for news in page_obj %}
+          <div class="list">
+            <div class="list__box">
+              <p>{{ news.title }}</p>
+              <div class="list__box-users">
+                {% for user in news.added_by_users %}
+                  <div>{{ user.first_name }} {{ user.last_name }} - <span>@{{ user.username }}</span></div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <p>Популярность: {{ news.popularity }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="pagination">
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}" class="pagination__btn">Пред.</a>
+        {% else %}
+          <div class="pagination__btn pagination__btn-disabled">Пред.</div>
+        {% endif %}
+
+        <span>{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class="pagination__btn">След.</a>
+        {% else %}
+          <div class="pagination__btn pagination__btn-disabled">След.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="posts-fire">
+      <h1>Горячие заголовки</h1>
+      <div class="posts-fire__list">
+        {% for topic in popular_topics %}
+          <div class="list">
+            <div class="list__box">
+              <p>{{ topic.title }}</p>
+              <div class="list__box-users">
+                {% for user in topic.added_by %}
+                  <div>{{ user.first_name }} {{ user.last_name }} - <span>@{{ user.username }}</span></div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <p>Популярность: {{ topic.popularity }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

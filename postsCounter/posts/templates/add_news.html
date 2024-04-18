@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'styles/add_news.css' %}?v=1.0.1" />
+{% endblock head %}
+
+{% block content %}
+  <div class="add-news">
+    <h1>Добавление заголовка</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      <label for="id_title">Введите заголовок</label>
+
+      <textarea type="text" id="id_title" name="title" required></textarea>
+
+      {% if form.errors %}
+        <ul>
+          {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <button type="submit">Добавить</button>
+    </form>
+  </div>
+{% endblock content %}
